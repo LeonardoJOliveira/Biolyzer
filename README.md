@@ -30,23 +30,6 @@ A bioinformática é uma área de nicho e muitas plataformas são complexas para
    - **Linux** → `BioLyzer.AppImage` (dê permissão de execução se precisar: `chmod +x BioLyzer.AppImage`, depois dois cliques ou `./BioLyzer.AppImage`).
   
 Pronto — o app abre numa janela própria, offline, sem depender de navegador nem de nada instalado além do sistema operacional.
-### Gerando o executável você mesmo (opcional)
-
-A pasta `dist/` já vem pronta no repositório, então normalmente você **não precisa** rodar isso. Mas se você mudou o código e quer gerar uma nova versão do executável:
-
-```bash
-npm install
-npm run build
-```
-
-Isso baixa o Electron pra sua plataforma e recria a pasta `dist/` com o app atualizado (`.exe` no Windows, `.AppImage` no Linux, `.dmg` no macOS).
-
-Na raiz do projeto há arquivos de teste que já podem ser carregados no app pra você experimentar sem digitar nada:
-
-- `exempodna.fasta`: sequências de DNA
-- `exemporna.fasta`: sequências de RNA
-- `teste.fasta`: duas sequências curtas de RNA, boas pra testar o comparador
-
 ## Guia de uso
 
 O app é dividido em abas (menu lateral/superior). Cada uma abre uma "página" (`div.page`) diferente — só uma fica visível por vez.
