@@ -10,7 +10,7 @@ A bioinformática é uma área de nicho e muitas plataformas são complexas para
 
 ## Índice
 
-- [Como rodar o projeto](#como-rodar-o-projeto)
+- [Como executar o BioLyzer](#como-executar-o-biolyzer)
 - [Guia de uso](#guia-de-uso)
   - [Conversor DNA ↔ RNA](#1-conversor-dna--rna)
   - [Tradutor RNA → Proteína](#2-tradutor-rna--proteína)
@@ -21,37 +21,40 @@ A bioinformática é uma área de nicho e muitas plataformas são complexas para
 - [Limitações conhecidas](#limitações-conhecidas)
 - [Créditos](#créditos)
 
-## Como rodar o projeto
+## Como executar o BioLyzer
 
-Requisitos: [Node.js](https://nodejs.org/) instalado.
+A forma normal de usar o app é pela pasta **`dist/`**, que já vem com o executável pronto — não precisa instalar Node.js, Electron nem nada disso.
+
+1. Baixe/clone o projeto.
+2. Entre na pasta `dist/` (ela já vem junto com o repositório).
+3. Abra o executável correspondente ao seu sistema:
+   - **Windows** → `BioLyzer.exe` (portátil — dá dois cliques e já abre, não precisa instalar).
+   - **Linux** → `BioLyzer.AppImage` (dê permissão de execução se precisar: `chmod +x BioLyzer.AppImage`, depois dois cliques ou `./BioLyzer.AppImage`).
+   - **macOS** → `BioLyzer.dmg` (abra o `.dmg` e arraste o app pra pasta Aplicativos, como qualquer app de Mac).
+
+Pronto — o app abre numa janela própria, offline, sem depender de navegador nem de nada instalado além do sistema operacional.
+
+### Só pra quem quer mexer no código-fonte
+
+Se você quer alterar o código (e não só usar o app), aí sim precisa de [Node.js](https://nodejs.org/):
 
 ```bash
-git clone https://github.com/LeonardoJOliveira/Biolyzer.git
-cd Biolyzer
 npm install
 npm start
 ```
 
-O comando `npm start` executa `electron .`, que abre `main.js` — o processo principal do Electron — que por sua vez carrega a interface (`src/index.html`) numa janela de 1200x800.
+Isso roda o app direto do código-fonte (em modo desenvolvimento), sem precisar gerar o executável a cada mudança.
 
-## Gerando o executável (build)
+### Gerando o executável você mesmo (opcional)
 
-Se você só quer usar o app (sem mexer no código), não precisa instalar Node.js nem rodar nada disso — é só pegar o executável já pronto (pasta/arquivo de instalação disponibilizado junto do projeto) e abrir direto.
-
-Se você quiser gerar esse executável você mesmo a partir do código-fonte:
+A pasta `dist/` já vem pronta no repositório, então normalmente você **não precisa** rodar isso. Mas se você mudou o código e quer gerar uma nova versão do executável:
 
 ```bash
 npm install
 npm run build
 ```
 
-Isso baixa o Electron pra sua plataforma e cria a pasta `dist/`, com o app pronto pra rodar sem precisar de Node.js instalado:
-
-- **Windows** → um `.exe` portátil
-- **Linux** → um `.AppImage`
-- **macOS** → um `.dmg`
-
-O que sai em `dist/` já é o executável final — pode copiar essa pasta e distribuir/rodar em outra máquina sem instalar mais nada.
+Isso baixa o Electron pra sua plataforma e recria a pasta `dist/` com o app atualizado (`.exe` no Windows, `.AppImage` no Linux, `.dmg` no macOS).
 
 Na raiz do projeto há arquivos de teste que já podem ser carregados no app pra você experimentar sem digitar nada:
 
