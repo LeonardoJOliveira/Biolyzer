@@ -23,28 +23,13 @@ A bioinformática é uma área de nicho e muitas plataformas são complexas para
 
 ## Como executar o BioLyzer
 
-A forma normal de usar o app é pela pasta **`dist/`**, que já vem com o executável pronto — não precisa instalar Node.js, Electron nem nada disso.
-
 1. Baixe/clone o projeto.
 2. Entre na pasta `dist/` (ela já vem junto com o repositório).
 3. Abra o executável correspondente ao seu sistema:
    - **Windows** → `BioLyzer.exe` (portátil — dá dois cliques e já abre, não precisa instalar).
    - **Linux** → `BioLyzer.AppImage` (dê permissão de execução se precisar: `chmod +x BioLyzer.AppImage`, depois dois cliques ou `./BioLyzer.AppImage`).
-   - **macOS** → `BioLyzer.dmg` (abra o `.dmg` e arraste o app pra pasta Aplicativos, como qualquer app de Mac).
-
+  
 Pronto — o app abre numa janela própria, offline, sem depender de navegador nem de nada instalado além do sistema operacional.
-
-### Só pra quem quer mexer no código-fonte
-
-Se você quer alterar o código (e não só usar o app), aí sim precisa de [Node.js](https://nodejs.org/):
-
-```bash
-npm install
-npm start
-```
-
-Isso roda o app direto do código-fonte (em modo desenvolvimento), sem precisar gerar o executável a cada mudança.
-
 ### Gerando o executável você mesmo (opcional)
 
 A pasta `dist/` já vem pronta no repositório, então normalmente você **não precisa** rodar isso. Mas se você mudou o código e quer gerar uma nova versão do executável:
